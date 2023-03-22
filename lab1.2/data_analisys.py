@@ -8,7 +8,16 @@ sheet['A'][1:]
 def getvalue(x):
     return x.value
 
-map(getvalue, sheet['A'][1:])
+years = list(map(getvalue, sheet['A'][1:]))
+temperature = list(map(getvalue, sheet['C'][1:]))
+activity = list(map(getvalue, sheet['D'][1:]))
 
-pyplot.plot(list_x, list_y, lable="Мой График")
+
+pyplot.plot(years, temperature, label="Относит. температура")
+pyplot.plot(years, activity, label="Активность Солнца")
+
+pyplot.xlabel('Годы')
+pyplot.ylabel('Температура/Активность Солнца')
+pyplot.legend(loc='upper left')
+
 pyplot.show()
