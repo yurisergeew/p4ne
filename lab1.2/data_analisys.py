@@ -13,8 +13,8 @@ temperature = list(map(getvalue, sheet['C'][1:]))
 activity = list(map(getvalue, sheet['D'][1:]))
 
 
-pyplot.plot(years, temperature, label="Относит. температура")
-pyplot.plot(years, activity, label="Активность Солнца")
+pyplot.plot(years, temperature, color='magenta', label="Относит. температура")
+pyplot.plot(years, activity, color='brown', label="Активность Солнца")
 
 pyplot.xlabel('Годы')
 pyplot.ylabel('Температура/Активность Солнца')
