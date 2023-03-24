@@ -21,7 +21,7 @@ random.seed()
 
 network_list = []
 
-while len(network_list) < 500:
+while len(network_list) < 50:
     random_network = IPv4RandomNetwork(8, 24)
     if random_network.regular() and random_network not in network_list:
         network_list.append(random_network)
