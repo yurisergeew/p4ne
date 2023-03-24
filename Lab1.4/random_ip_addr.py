@@ -12,7 +12,7 @@ class IPv4RandomNetwork(IPv4Network):
     def regular(self):
         return self.is_global and not (self.is_multicast or self.is_link_local or self.is_loopback or self.is_private or self.is_reserved or self.is_unspecified)
     def key_value(self):
-        return int(self.network_address) + (int(self.netmask) << 32)
+        return int(self.network_address) + (int(self.netmask) * 2**32)
 
 def sortfunc(x):
     return x.key_value()
@@ -21,7 +21,7 @@ random.seed()
 
 network_list = []
 
-while len(network_list) < 50:
+while len(network_list) < 500:
     random_network = IPv4RandomNetwork(8, 24)
     if random_network.regular() and random_network not in network_list:
         network_list.append(random_network)
