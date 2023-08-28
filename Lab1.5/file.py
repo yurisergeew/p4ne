@@ -12,4 +12,5 @@ for current_file in files :
 
 
 for i in ip_addr:
+    sorted(ip_addr)
     print(i)
